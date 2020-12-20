@@ -92,8 +92,17 @@ npm start
 
 ##### JSX
 
-* javascript안의 HTML이다.
-* Component를 만들고 어떻게 사용하는지에 대한 것
+* javascript + HTML. 즉) 자바스크립트에 html 문법같이 쓴다 뭐 이런말인듯
+
+* Component를 만들고 어떻게 사용하는지에 대한 것 - component는 대문자로 시작해야함 
+
+* 재사용 가능한 component를 할 수 있음
+
+* html의 id처럼 property의 name을 줄 수 있어
+
+* react masic에서 react는 우리가 전달한 props를 argument로 가져가는 일을 함
+
+  
 
 ##### 주의점
 
@@ -127,7 +136,49 @@ npm start
   );
   ```
 
+
+
+
+##### props
+
+* 객체같은 의미인데 좀 더 자유럽게 사용할 수 있음
+
+* 나중에 데이터를 List로 가져오거나 할 때 사용함
+
+*  자바스크립트 문법인 map함수를 사용하여 동적으로 원하는 데이터 수를 사용가능
+
+  ```js
+  function App() {
+    return <div>
+      {foodILike.map(dish => (			//map을 통해 모든 데이터 출력
+        <Food
+          key={dish.id}
+          name={dish.name}
+          rating={dish.rating}
+        />
+      ))}
+    </div>
+  }
+  ```
+
   
+
+##### propTypes
+
+* propTypes를 통해서 props의 type과 required(필수적으로 필요함을 의미) 체크할거임
+
+  ```js
+  Food.propTypes = {
+    name: PropTypes.string.isRequired,   //isRequired는 꼭 필요한 것을 의미한다.
+    rating: PropTypes.number.isRequired
+  }
+  ```
+
+  
+
+
+
+
 
 
 
