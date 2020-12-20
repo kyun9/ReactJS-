@@ -15,6 +15,9 @@
 ```bash
 # 리엑트 app 생성
 npx create-react-app {프로젝트이름}
+
+# 리엑트 실행  - localhost 유지하고 refresh됨
+npm start
 ```
 
 
@@ -57,8 +60,8 @@ npx create-react-app {프로젝트이름}
     import App from './App';
     
     ReactDOM.render(
-        <App /> document.getElementById('root')
-        /* index.html의 태그의 id와 동일해야됨 */
+        <App />,  							/* component의 형태 */ 
+        document.getElementById('root') 	/* index.html의 태그의 id와 동일해야됨 */
     );
     ```
 
@@ -67,15 +70,64 @@ npx create-react-app {프로젝트이름}
     ```js
     import React from "react";
     
-    /* 컴포넌트, 태그안에 집어넣을 값 입력 */
+    /* 컴포넌트(component), 태그안에 집어넣을 값 입력 */
     function App() {
-      return <div>Hello!!!</div>
+      return (
+          <div>
+          	Hello!!!
+          </div>
+      );
     }
     
     export default App;
     ```
 
-    
+
+
+
+
+### component?
+
+>  HTML을 반환하는 함수
+
+##### JSX
+
+* javascript안의 HTML이다.
+* Component를 만들고 어떻게 사용하는지에 대한 것
+
+##### 주의점
+
+* React Application은 한번에 하나의 component만 rendering할 수 있다!!
+
+  * index.js에는 하나의 컴포넌트가 와야되는데 여러개의 컴포넌트를 집어 넣고 싶다면 app.js컴포넌트에 다른 컴포넌트를 추가해서 가져와야한다.
+
+  ```js
+  //app.js
+  import React from "react";
+  import Potato from './Potato';		//다른 컴포넌트를 app.js에 import시킨다.
+  
+  function App() {
+    return <div>
+      <h1>Hello!!!</h1>
+      <Potato />
+    </div>
+  }
+  
+  export default App;
+  
+  //index.js
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import App from './App';			//하나의 component만 가져온다.
+  
+  
+  ReactDOM.render(
+      <App />,
+      document.getElementById('root')
+  );
+  ```
+
+  
 
 
 
