@@ -168,12 +168,14 @@ npm start
 * propTypes를 통해서 props의 type과 required(필수적으로 필요함을 의미) 체크할거임
 
   ```js
+  npm i prop-types //npm설치
+  
   Food.propTypes = {
     name: PropTypes.string.isRequired,   //isRequired는 꼭 필요한 것을 의미한다.
     rating: PropTypes.number.isRequired
-  }
+}
   ```
-
+  
   
 
 
