@@ -257,6 +257,35 @@ npm start
 
 
 
+### axios
+
+> fetch  위에 있는 작은 layer
+
+```bash
+npm install axios
+```
+
+* axios.get을 사용해서 가져오지만 완료되기까지는 시간이 좀 필요해서 비동기 처리를 한다.
+
+  ```js
+  //비동기 async, await
+  //함수 내부에서 비동기로 axios를 기다리게 해
+  
+  getMovies = async () => {
+      const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+    };
+    
+  componentDidMount() {
+      this.getMovies();
+    }
+  ```
+
+  
+
+
+
+
+
 
 
 
