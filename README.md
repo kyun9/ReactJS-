@@ -179,6 +179,8 @@ npm start
 
 
 
+### Component Class (extends React Componet)
+
 ##### state
 
 * 컴퍼넌트 클래스
@@ -225,7 +227,33 @@ npm start
 
   
 
+##### component life cycle method
 
+* react가  componet를 생성하는 그리고 없애는 방법
+
+* component죽을때 
+
+  * 페이지가 바뀔때
+  * state를 통해 component교체할 때
+
+* Mounting
+
+  * render 전에 호출 되는 function
+    * ``constructor()`` : javascript에서 class를 만들 때 호출되는 거(react가 아니야)
+    * ``static getDerivedStateFromProps()`` : 
+  * ``render()``
+  * render 후에 호출되는 function
+    * ``componentDidMount()`` 
+
+* Updating
+
+  > add나 minus 버튼을 클릭해서 state를 변경할 때 그게 업데이트임
+
+  * `` static getDerivedStateFromProps()`` 
+  * ``shouldComponentUpdate()``
+  * ``render()``
+  * ``getSnapshotBeforeUpdate()``
+  * ``componentDidUpdate()`` : 메소드 호출하고 업데이트가 완료되었다고 말하면서 실행되는 메소드
 
 
 
