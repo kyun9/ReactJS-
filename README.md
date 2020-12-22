@@ -176,6 +176,53 @@ npm start
 }
   ```
   
+
+
+
+##### state
+
+* 컴퍼넌트 클래스
+
+  * React.Component에서 상속
+
+  * render method
+
+    * react는 자동적으로 class component의 render method를 실행한다.
+
+    * retruen
+
+      ```js
+      import React from "react";
+      import PropTypes from "prop-types";
+      
+      class App extends React.Component{
+        render(){
+          return <h1>Im a class Component</h1>
+        }
+      }
+      
+      export default App;
+      ```
+
+  * 왜 class component를 가져오는 걸까? function component는 쉬웠는데...
+
+    * class component를 사용하면 **state**를 사용할 수 있으니까
+
+* state는 object이고 component는 data를 넣을 공간이야
+
+  * componet의 data를 바꿀 수 있는 작업을 할 수 있어
+
+  ```js
+  class App extends React.Component {
+    state = {
+      count: 0
+    };
+    render() {
+      return (<h1>The number is :  {this.state.count}</h1>)
+    }
+  }
+  ```
+
   
 
 
