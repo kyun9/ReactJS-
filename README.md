@@ -304,11 +304,90 @@ npm install axios
   //build 폴더를 얻을 수 있음
   npm run build
   
-  /* 바로 빌드 - package.json */
+  /* 빌드 폴더를 gh-pages에 업로드 - package.json */
    "deploy":"gh-pages -d build"
+   
+  /**/
   ```
 
-  
+  ```json
+  "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build", // 1. build 폴더 얻기
+      "deploy":"gh-pages -d build",  // 2. build 폴더에 upload하기
+      "predeploy": "npm run build" //deploy를 실행하면 자동적으로 실행돼
+    },
+  ```
+
+
+
+### react-router-dom
+
+```js
+import React from "react";
+import { HashRouter, Route } from "react-router-dom";
+import About from "./routes/About";
+import Home from "./routes/Home";
+
+function App() {
+  return (
+    <HashRouter>
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/about" component={About} />
+    </HashRouter>
+  );
+}
+export default App;
+
+/*
+'/'나 '/home', '/home/introduce'를 하면 모든 컴포넌트가 렌더링 된다.
+하지만 exact ={true}를 해주면 해당 url에만 데이터를 렌더링해준다.
+*/
+```
+
+* HashRouter
+  * /#/가 생긴다
+* BrowerRouter
+  * /#/가 없다
+
+### Navigation Link
+
+```js
+import React from "react";
+import { Link } from "react-router-dom";
+
+function Navigation() {
+  return (
+    <div>
+      {/* 
+      <a href="/">Home</a>
+      <a href="/about">About</a> 
+      */}
+
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+    </div>
+  );
+}
+
+export default Navigation;
+
+/*
+a태그의 href는 html이다. 전체 페이지가 새로고침 되어 버려.. 리액트를 죽여
+그 대신에
+"react-router-dom"에서의 <Link to>를 사용한다.
+단 link는 호출하는 곳 router안에 있어야한다. 
+*/
+
+//ex
+<HashRouter>
+  <Navigation />
+  <Route path="/" exact={true} component={Home} />
+  <Route path="/about" component={About} />
+</HashRouter>
+```
+
+
 
 
 
