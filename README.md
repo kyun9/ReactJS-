@@ -280,6 +280,34 @@ npm install axios
     }
   ```
 
+
+
+
+### gh-pages
+
+> 나의 웹사이트를 github의 github page 도메인에 나타나게 해주는 것 - 즉, 무료 웹사이트를 제공 (static 웹사이트, HTML/CSS/JavaScript로 이루어진 웹사이트)
+
+* github계정 소문자
+
+* repository로 소문자
+
+  ```bash
+  npm istall gh-pages
+  
+  
+  /*scripts에 추가 - package.json*/
+  "deploy":"gh-pages"
+  
+  /*마지막 줄에 추가 - package.json*/
+  "homepage": "https://kyun9.github.io/ReactJS-movie_app"
+  
+  //build 폴더를 얻을 수 있음
+  npm run build
+  
+  /* 바로 빌드 - package.json */
+   "deploy":"gh-pages -d build"
+  ```
+
   
 
 
