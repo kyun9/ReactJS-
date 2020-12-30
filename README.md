@@ -175,7 +175,7 @@ npm start
     rating: PropTypes.number.isRequired
 }
   ```
-  
+  ```
 
 
 
