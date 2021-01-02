@@ -39,5 +39,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://kyun9.github.io/react-movie_app"
+  "homepage": "https://kyun9.github.io/react-movie_app",
+  "proxy": "http://localhost:9000"
 }
